@@ -21,15 +21,19 @@ $colors: (
   "white": white,
 );
 
-@debug map-get($colors, blue);
-@debug map-has-key($colors, "secondary");
-@debug map-remove($colors, "primary");
-@debug map-merge(
-  $colors,
-  (
-    "pink": #ffc0cb,
-  )
-);
+.test-btn {
+  background-color: map-get($colors, primary);
+}
+
+// @debug map-get($colors, blue);
+// @debug map-has-key($colors, "secondary");
+// @debug map-remove($colors, "primary");
+// @debug map-merge(
+//   $colors,
+//   (
+//     "pink": #ffc0cb,
+//   )
+// );
 
 // spacing
 $base-padding: 1rem;

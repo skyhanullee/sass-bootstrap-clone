@@ -1,12 +1,13 @@
 // variables and functions
-@use "variables" as *;
+@use "./abstracts/variables";
 
 // base and layout
-@use "base" as *;
+@use "./abstracts/base";
 
 // colors
+@use "./abstracts/colors";
 
 // components (button, card, navbar)
-@use "./components/card" as *;
+@use "./components/card";
 
 // utilities (margin, padding, opacity)
