@@ -1,5 +1,6 @@
 @use "../abstracts/" as *;
 
+// for testing purposes
 .responsive-test {
   @include xs {
     color: red;
