@@ -1,0 +1,13 @@
+@use "../abstracts/variables" as *;
+
+// mixin is used for repeat styles
+// can take in value but can have a default value after the colon:
+@mixin btn($bg-color: grey) {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: $base-padding ($base-padding * 2);
+  border-radius: $base-border-radius;
+  background-color: $bg-color;
+}
