@@ -4,7 +4,7 @@
 
 // base and layout
 @use "./abstracts/base";
-@use "./abstracts/breakpoints";
+@use "./abstracts/breakpoints"; // only used for testing
 
 // colors
 @use "./abstracts/colors";
