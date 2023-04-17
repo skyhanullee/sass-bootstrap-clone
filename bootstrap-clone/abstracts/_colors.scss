@@ -5,29 +5,53 @@
     color: $val;
   }
 
+  .text-hover-#{$key} {
+    // parent selector to add hover and avoid rewriting
+    &:hover {
+      color: $val;
+    }
+  }
+
   .bg-#{$key} {
     background-color: $val;
   }
 
-  // light variations
-  @for $i from 1 through 9 {
-    .text-#{$key}-light-#{$i * 100} {
-      // mix: first color, second color, how much%
-      color: mix(white, $val, $i * 10%);
-    }
-    .bg-#{$key}-light-#{$i * 100} {
-      background-color: mix(white, $val, $i * 10%);
-    }
-  }
+  // avoids creating variations for black and white
+  @if ($val != black and $val != white) {
+    // light variations
+    @for $i from 1 through 9 {
+      .text-#{$key}-light-#{$i * 100} {
+        // mix: first color, second color, how much%
+        color: mix(white, $val, $i * 10%);
+      }
 
-  // dark variations
-  @for $i from 1 through 9 {
-    .text-#{$key}-dark-#{$i * 100} {
-      // mix: first color, second color, how much%
-      color: mix(black, $val, $i * 10%);
+      .text-hover-#{$key}-light-#{$i * 100} {
+        &:hover {
+          color: mix(white, $val, $i * 10%);
+        }
+      }
+
+      .bg-#{$key}-light-#{$i * 100} {
+        background-color: mix(white, $val, $i * 10%);
+      }
     }
-    .bg-#{$key}-dark-#{$i * 100} {
-      background-color: mix(black, $val, $i * 10%);
+
+    // dark variations
+    @for $i from 1 through 9 {
+      .text-#{$key}-dark-#{$i * 100} {
+        // mix: first color, second color, how much%
+        color: mix(black, $val, $i * 10%);
+      }
+
+      .text-hover-#{$key}-dark-#{$i * 100} {
+        &:hover {
+          color: mix(black, $val, $i * 10%);
+        }
+      }
+
+      .bg-#{$key}-dark-#{$i * 100} {
+        background-color: mix(black, $val, $i * 10%);
+      }
     }
   }
 }
